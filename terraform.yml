@@ -1,0 +1,35 @@
+Nombre: Implementación de Terraform AWS
+
+en:
+  EVENTO:
+    sucursales:
+      -RAMA
+
+trabajos:
+  NOMBRE:
+    se ejecuta en: ubuntu-latest
+
+    pasos:
+      - nombre: Repositorio de pago
+        usos: acciones/checkout@v4
+
+      - nombre: INSTALAR TERRAFORM EN LA MÁQUINA VIRTUAL
+        usos:
+
+      - nombre: CONFIGURAR CREDENCIALES AWS
+        usos:
+        con:
+          ID de clave de acceso de AWS: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          clave de acceso secreta de AWS: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+	  token de sesión de AWS: ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region: "us-east-1" # Cambia a la región de AWS que estás usando
+
+      - nombre: INICIALIZAR TERRAFORM
+        correr:
+       
+
+      - nombre: Plan Terraform
+        correr:
+
+      - nombre: Aplicar Terraform
+        correr:
